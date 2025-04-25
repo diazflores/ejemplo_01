@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda de Juegos</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #1b2838;
+      color: white;
+    }
+    .game-card {
+      background-color: #2a475e;
+      color: white;
+    }
+    .game-card img {
+      transition: transform 0.3s ease-in-out;
+    }
+    .game-card:hover img {
+      transform: scale(1.05);
+    }
+    /* Estilo del buscador */
+    #buscador {
+      background-color: white;
+      color: black;
+      width: 200px;
+      padding: 8px;
+      border-radius: 5px;
+    }
+    /* Estilo del apartado lateral */
+    .sidebar {
+      background-color: #2a475e;
+      color: white;
+      width: 250px;
+      padding: 20px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    .sidebar h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+    /* Estilo para el layout de juegos y barra lateral */
+    .content-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .game-section {
+      flex: 1;
+    }
+    .sidebar-section {
+      width: 250px;
+    }
+    /* Estilo para el header (título y logo) */
+    .header {
+      display: flex;
+      justify-content: space-between; /* Alinea a la izquierda el título y logo, y los demás elementos a la derecha */
+      align-items: center;
+    }
+    .header img {
+      margin-left: 5px; /* Espacio mínimo entre el título y el logo */
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <!-- Header -->
+  <header class="bg-gray-900 p-4 header">
+    <!-- Título y Logo juntos -->
+    <h1 class="text-2xl font-bold text-blue-400 flex items-center">
+      Ludex
+      <img src=""> <!-- Aquí deberías poner la ruta de tu logo - recuerda  --> 
+    </h1>
+
+    <!-- Menú -->
+    <nav class="space-x-4 flex items-center">
+      <input 
+        type="text" 
+        id="buscador" 
+        class="rounded-lg" 
+        placeholder="Buscar juego..." 
+        oninput="filtrarJuegos()"
+      />
+      <a href="#" class="text-white hover:text-blue-300">Inicio</a>
+      <a href="#" class="text-white hover:text-blue-300">Tienda</a>
+      <a href="#" class="text-white hover:text-blue-300">Biblioteca</a>
+      <a href="#" class="text-white hover:text-blue-300">Comunidad</a>
+    </nav>
+  </header>
+
+  <!-- Contenedor principal con barra lateral a la derecha -->
+  <div class="content-container p-6">
+    <!-- Sección de juegos -->
+    <div class="game-section">
+      <!-- Juegos destacados -->
+      <section>
+        <h2 class="text-2xl mb-4">Destacados</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="rounded mb-1">
+          <div class="game-card p-4 rounded-lg shadow">
+            <img src="https://th.bing.com/th/id/OIP.3w0CAq4KQ_9Z9gQjbH8RawHaFj?w=800&h=600&rs=1&pid=ImgDetMain" alt="Juego 1" class="rounded mb-2">
+            <h3 class="text-lg font-semibold">minecraft</h3>
+            <p class="text-sm text-gray-300">un videojuego sandbox enfocado en permitirle al jugador explorar y modificar un mundo.</p>
+          </div>
+          <div class="game-card p-4 rounded-lg shadow">
+            <img src="https://wallpapercave.com/wp/38zchpT.jpg" alt="Juego 2" class="rounded mb-2">
+            <h3 class="text-lg font-semibold">left 4 dead 2 </h3>
+            <p class="text-sm text-gray-300">Ambientado durante las secuelas de una pandemia apocalíptica, el juego se centra en cuatro nuevos supervivientes que luchan contra hordas de zombis.</p>
+          </div>
+          <div class="game-card p-4 rounded-lg shadow">
+            <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2014/05/323722-unreal-tournament-vuelve-como-free-play.jpg?tf=1200x900" alt="Juego 3" class="rounded mb-2">
+            <h3 class="text-lg font-semibold">unreal tournament</h3>
+            <p class="text-sm text-gray-300">Unreal Tournament es un juego de disparos en primera persona en arena, con combates a muerte multijugador cara a cara como principal protagonista.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Juegos en oferta -->
+      <section class="mt-6">
+        <h2 class="text-2xl mb-4">Juegos en Oferta</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-6" id="juegos-oferta">
+          <!-- Aquí se cargarán los juegos de oferta con JS -->
+        </div>
+      </section>
+
+      <!-- Juegos gratis -->
+      <section class="mt-6">
+        <h2 class="text-2xl mb-4">Juegos Gratis</h2>
+        <div id="gratis-container" class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+          <!-- Aquí se cargarán los juegos gratis con JS -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Barra lateral -->
+    <div class="sidebar-section">
+      <div class="sidebar">
+        <h3>Categorías</h3>
+        <ul>
+          <li>Acción</li>
+          <li>Aventura</li>
+          <li>Estrategia</li>
+          <li>Simulación</li>
+          <li>RPG</li>
+        </ul>
+        <h3>Recomendado</h3>
+        <ul>
+          <li>Juego Recomendado 1</li>
+          <li>Juego Recomendado 2</li>
+          <li>Juego Recomendado 3</li>
+        </ul>
+        <h3>Género</h3>
+        <ul>
+          <li>Acción</li>
+          <li>Aventura</li>
+          <li>Puzzle</li>
+          <li>Deportes</li>
+        </ul>
+        <h3>Títulos</h3>
+        <ul>
+          <li>Título 1</li>
+          <li>Título 2</li>
+          <li>Título 3</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    
+    const juegosRol = [
+      {
+        titulo: "Blur",
+        descripcion: "Enfrentate a numerosos conductores en una carrera donde ganar es tu unico objetivo, utiliza las armas y efectos que estan en la pista de carera.",
+        imagen: "https://gepig.com/game_cover_460w/1045.jpg",
+      },
+      {
+        titulo: "Barotrauma",
+        descripcion: "Barotrauma es un simulador cooperativo de submarinos en 2D, ambientado en el espacio, con elementos de survival horror y RPG. Dirige tu submarino, completa misiones y lucha contra monstruos.",
+        imagen: "https://cdn1.epicgames.com/spt-assets/2ff3a988723d4a80a33102eb23ae2525/barotrauma-xrg0z.jpg",
+      },
+      {
+        titulo: "No More Room in Hell 2",
+        descripcion: "No More Room in Hell 2 es un intenso y aterrador viaje cooperativo de muerte permanente hacia la inquietante oscuridad de las zonas infestadas de zombis.",
+        imagen: "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/06/no-more-room-in-hell-2-dev-diary-thumb-cropped.jpg",
+      },
+      {
+        titulo: "Metro 2033",
+        descripcion: "videojuego de terror que combina elementos de acción y con elementos de disparos en primera persona. El juego se basa en la novela Metro 2033.",
+        imagen: "https://sm.ign.com/t/ign_latam/screenshot/default/metro2033-redux_htkn.1200.png",
+      },
+      {
+        titulo: "half-life",
+        descripcion: "Half-Life es la historia de Gordon Freeman, un físico que se encuentra a sí mismo en el centro de la resistencia contra una invasión alienígena que amenaza el futuro de la humanidad.",
+        imagen: "https://asphodelgaming.com/wp-content/uploads/sites/3/2023/04/Half-Life.jpg",
+      },
+      {
+        titulo: "half-life 2",
+        descripcion: "Experimente este emblemático juego de disparos en primera persona repleto de creación de mundos inmersivos, física que traspasa los límites y un combate emocionante.",
+        imagen: "https://s2.gaming-cdn.com/images/products/2284/orig-fallback-v1/half-life-2-pc-mac-juego-steam-cover.jpg?v=1650555068",
+      },
+      {
+        titulo: "Pax Augusta",
+        descripcion: "Pax Augusta es probablemente el simulador de construcción de ciudades antiguas más auténtico. Construye ciudades florecientes y cuida de tus ciudadanos.",
+        imagen: "https://cdn.dlcompare.com/game_tetiere/upload/gameimage/file/pax-augusta-tetiere-file-84b83b11.jpg.webp",
+      },
+      {
+        titulo: "The Spell Brigade",
+        descripcion: "The Spell Brigade es un juego tipo supervivencia cooperativo en línea para 1-4 jugadores. Únete a tus amigos magos para acabar con hordas de criaturas oscuras.",
+        imagen: "https://cogconnected.com/wp-content/uploads/2024/04/The-Spell-Brigade-Featured.jpg",
+      }
+    ];
+
+    const juegosGratis = [
+      {
+        titulo: "Once Human",
+        descripcion: "Once Human es un juego multijugador de supervivencia sobrenatural en mundo abierto. ¡Juégalo gratis ya en PC y móvil! La versión móvil de Once Human ya está disponible.",
+        imagen: "https://mundodrix.com.br/site/wp-content/uploads/2022/11/Once-Human.jpg",
+      },
+      {
+        titulo: "SUPERVIVE",
+        descripcion: "Salta, deslízate, dispara, golpea, rebota, bombardea y ataca a tus enemigos en este campo de batalla caótico y de libre flujo en el cielo.",
+        imagen: "https://mediamaster.vandal.net/m/11-2024/28/202411281754450_1.jpg",
+      },
+      {
+        titulo: "Counter Strike 2",
+        descripcion: "Counter Strike es un juego de género shooter en primera persona que te permitirá vivir la emoción y la adrenalina del campo de batalla.",
+        imagen: "https://www.gaming.net/wp-content/uploads/2023/03/Counter-Strike-2-1.jpg",
+      },
+      {
+        titulo: "Counter Strike 1.6",
+        descripcion: "Counter Strike 1.6 es un emocionante juego de disparos en equipo (shooter) domde tu objetivo es sobrevivir.",
+        imagen: "https://cdn.mos.cms.futurecdn.net/391a087fabd35afe0b04eea35cd9daa1-1200-80.jpg",
+      },
+      {
+        titulo: "eFootball™",
+        descripcion: "Es una nueva era del fútbol digital: ¡PES se ha convertido en eFootball™! Y ahora puedes experimentarlo.",
+        imagen: "https://www.esportmaniacos.com/wp-content/uploads/2021/08/eFootball-e1629289020375.jpg",
+      },
+      {
+        titulo: "Dead Frontier 2",
+        descripcion: "MMO de terror y supervivencia. Como uno de los pocos supervivientes del brote, deberás sobrevivir a duras penas entre las ruinas de la sociedad.",
+        imagen: "https://image.gameapps.hk/images/201808/07/Dead-Frontier-2-Website-Brand-Logo-Design-thumb.jpg",
+      },
+      {
+        titulo: "The Walking Dead: No Man's Lands",
+        descripcion: "The Walking Dead: No Man's Land es un juego de rol táctico que te sumerge en un mundo hostil e implacable, invadido por los no muertos. Tu misión es liderar un grupo.",
+        imagen: "https://venturebeat.com/wp-content/uploads/2016/10/the-walking-dead-no-mans-land.jpg?fit=1920%2C1080&strip=all",
+      },
+      {
+        titulo: "Dark and Darker",
+        descripcion: "La versión gratuita de Dark and Darker permite a los jugadores crear un personaje y jugar en modo Normal en todos los mapas, completar misiones y construir un alijo.",
+        imagen: "https://e4z6bdbogrg.exactdn.com/wp-content/uploads/2024/12/dark-and-darker-1yv3x.jpg",
+      }
+    ];
+
+    const contenedorRol = document.getElementById("juegos-oferta");
+    const contenedorGratis = document.getElementById("gratis-container");
+
+    function mostrarJuegos(juegos, contenedor) {
+      contenedor.innerHTML = "";
+      juegos.forEach((juego) => {
+        const card = document.createElement("div");
+        card.className = "game-card p-4 rounded-lg shadow";
+        card.innerHTML = `
+          <img src="${juego.imagen}" alt="${juego.titulo}" class="rounded mb-2">
+          <h3 class="text-lg font-semibold">${juego.titulo}</h3>
+          <p class="text-sm">${juego.descripcion}</p>
+        `;
+        contenedor.appendChild(card);
+      });
+    }
+
+    function filtrarJuegos() {
+      const textoBusqueda = document.getElementById("buscador").value.toLowerCase();
+      
+      const juegosFiltradosRol = juegosRol.filter(juego => juego.titulo.toLowerCase().includes(textoBusqueda));
+      const juegosFiltradosGratis = juegosGratis.filter(juego => juego.titulo.toLowerCase().includes(textoBusqueda));
+      
+      mostrarJuegos(juegosFiltradosRol, contenedorRol);
+      mostrarJuegos(juegosFiltradosGratis, contenedorGratis);
+    }
+
+    // Mostrar todos los juegos por defecto
+    mostrarJuegos(juegosRol, contenedorRol);
+    mostrarJuegos(juegosGratis, contenedorGratis);
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Videojuegos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            height: 100%; /* Asegúrate de que el cuerpo ocupe toda la altura */
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .product {
+            background: #fff;
+            border: 1px solid #ddd;
+            margin: 20px;
+            padding: 20px;
+            float: left;
+            width: calc(33% - 40px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .product img {
+            max-width: 100%;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Elimina el espacio en la parte inferior */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tienda de Videojuegos</h1>
+        <p>Los mejores videojuegos a tu alcance</p>
+    </header>
+    <div class="container">
+        <div class="product">
+            <h2>Videojuego 1</h2>
+            <img src="https://via.placeholder.com/150" alt="Videojuego 1">
+            <p>Descripción del videojuego 1.</p>
+            <p>Precio: $29.99</p>
+            <button>Comprar</button>
+        </div>
+        <div class="product">
+            <h2>Videojuego 2</h2>
+            <img src="https://via.placeholder.com/150" alt="Videojuego 2">
+            <p>Descripción del videojuego 2.</p>
+            <p>Precio: $39.99</p>
+            <button>Comprar</button>
+        </div>
+        <div class="product">
+            <h2>Videojuego 3</h2>
+            <img src="https://via.placeholder.com/150" alt="Videojuego 3">
+            <p>Descripción del videojuego 3.</p>
+            <p>Precio: $49.99</p>
+            <button>Comprar</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Tienda de Videojuegos</p>
+    </footer>
+</body>
+</html>
