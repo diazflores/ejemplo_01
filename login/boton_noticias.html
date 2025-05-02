@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Página de Noticias - Estilo Steam</title>
+    <style>
+      /* Estilos generales */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-color: #171a21; /* Fondo muy oscuro */
+        color: #c7d5e0;
+      }
+      header,
+      footer {
+        background: #1b2838;
+        color: #fff;
+        padding: 8px 0; /* Barra más delgada */
+        text-align: center;
+      }
+      /* Navigation styled as buttons */
+      nav {
+        background: #2a475e;
+        padding: 10px;
+        text-align: center;
+      }
+      nav button {
+        background: #2a475e;
+        border: none;
+        color: #c7d5e0;
+        margin: 0 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s, color 0.3s;
+      }
+      nav button:hover {
+        background: #66c0f4;
+        color: #fff;
+      }
+      .container {
+        width: 80%;
+        margin: 20px auto;
+        overflow: hidden;
+        padding: 20px;
+        background: #1b2838;
+        border-radius: 5px;
+      }
+      /* Cada noticia en un cuadro */
+      article {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #2a475e;
+        padding-bottom: 10px;
+      }
+      /* Cuadro para la imagen */
+      .news-image {
+        flex: 0 0 240px; /* Ancho fijo mayor */
+        height: 180px; /* Altura mayor */
+        margin: 0 20px; /* Márgenes izquierdo y derecho */
+        background: #2a475e;
+        border: 2px solid #66c0f4;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #66c0f4;
+        font-size: 14px;
+      }
+      /* Sección de contenido de la noticia */
+      .news-content {
+        flex: 1;
+      }
+      .news-content h2 {
+        margin-top: 0;
+        color: #66c0f4;
+      }
+      .news-content p {
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Noticias Hoy</h1>
+      <!-- Título secundario eliminado -->
+    </header>
+    <nav>
+      <button type="button" onclick="filterArticles('all')">Inicio</button>
+      <button type="button" onclick="filterArticles('review')">Reseñas</button>
+      <button type="button" onclick="filterArticles('novedades')">Novedades</button>
+      <button type="button" onclick="filterArticles('soporte')">Soporte</button>
+      <button type="button" onclick="filterArticles('catalog')">Catálogo</button>
+    </nav>
+    <div class="container">
+      <!-- 4 Reviews -->
+      <article class="review">
+        <div class="news-image">
+          <img src="https://cdn.wallpapersafari.com/80/89/LYb86q.jpg" alt="Left 4 Dead 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 3px;" />
+        </div>
+        <div class="news-content">
+          <h2>Left 4 Dead 2</h2>
+          <p>
+           Valve prometió nuevos amigos, más zombies y un mejor apocalípsis en la segunda parte de Left for Dead, a sólo un año de distacia entre cada título, esto de matar zombies parece ser la fórmula perfecta par que la compañía explote la franquicia durante varios años
+          </p>
+          <p>★★★★★ </p>
+        </div>
+      </article>
+      <article class="review">
+        <div class="news-image">
+          <img src="https://cdn0.vox-cdn.com/thumbor/ZuDrW3cUYwn2MbDOgxgiBhqTkyI=/0x52:1680x997/1600x900/cdn0.vox-cdn.com/uploads/chorus_image/image/32727259/unreal-tournament-3-1.0.jpg" alt="Left 4 Dead 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 3px;" />
+        </div>
+        <div class="news-content">
+          <h2>unreal tournament</h2>
+          <p>
+            Unreal Tournament: Game of the Year Edition (UT GOTY) es uno de esos títulos que ha dejado una marca indeleble en el mundo de los videojuegos. Lanzado originalmente en 1999 y seguido por esta edición especial en el año 2000, UT GOTY atrajo a jugadores de todo el globo gracias a su combinación única de acción rápida, gráficos impresionantes y un diseño de juego innovador para su tiempo.
+          </p>
+          <p>★★★★ </p>
+        </div>
+      </article>
+      <article class="review">
+        <div class="news-image">
+          <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/10/minecraft-is-losing-one-of-its-features-in-2025.jpg" alt="Left 4 Dead 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 3px;" />
+        </div>
+        <div class="news-content">
+          <h2>Minecraft</h2>
+          <p>
+            "Minecraft es uno de esos juegos que nunca envejece. Empecé construyendo una casa de tierra y terminé creando mundos gigantes con mis amigos. Me encanta la libertad que te da para explorar, construir y sobrevivir como quieras. A veces se siente solitario, pero también es súper relajante. Si te gusta la creatividad o la aventura, es imposible no engancharse."
+          </p>
+          <p>★★★★★</p>
+        </div>
+      </article>
+      <article class="review">
+        <div class="news-image">
+          <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/10/minecraft-is-losing-one-of-its-features-in-2025.jpg" alt="Left 4 Dead 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 3px;" />
+        </div>
+        <div class="news-content">
+          <h2>Minecraft</h2>
+          <p>
+            "Minecraft es uno de esos juegos que nunca envejece. Empecé construyendo una casa de tierra y terminé creando mundos gigantes con mis amigos. Me encanta la libertad que te da para explorar, construir y sobrevivir como quieras. A veces se siente solitario, pero también es súper relajante. Si te gusta la creatividad o la aventura, es imposible no engancharse."
+          </p>
+          <p>★★★★★</p>
+        </div>
+      </article>
+      <!-- 4 Novedades -->
+      <article class="novedades">
+        <div class="news-image">
+          <img src="https://cdn.akamai.steamstatic.com/steam/apps/815370/capsule_616x353_alt_assets_3.jpg?t=1674651276" alt="Left 4 Dead 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 3px;" />
+        </div>
+        <div class="news-content">
+          <h2>creen hell</h2>
+          <p>
+           Construye tu propia cochera desde cero y crea tus líneas de autobús en City Bus Manager. Juega en tu propia ciudad natal o en cualquier ciudad famosa del mundo. Recrea la red oficial de autobuses o cámbiala a tu antojo.
+        </div>
+      </article>
+      <article class="novedades">
+        <div class="news-image">
+          <img src="https://th.bing.com/th/id/R.698a6d1ec351fde9f99909ad0ea19f22?rik=CgouZ%2b4VopHiew&pid=ImgRaw&r=0" alt="Left 4 Dead 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 3px;" />
+        </div>
+        <div class="news-content">
+          <h2>city buss</h2>
+          <p>
+            "Green Hell me dejó con los nervios de punta. Es un survival realista en la selva amazónica donde todo te quiere matar: serpientes, enfermedades, incluso tu propia mente. El sistema de supervivencia es profundo y brutal. Al principio morí mil veces, pero cuando le agarrás la mano, se vuelve súper inmersivo. Ideal si te gustan los desafíos extremos."
+        </div>
+      </article>
+      <article class="novedades">
+        <div class="news-image">
+          <img src="https://th.bing.com/th/id/OIP.vA2bLRtpHOjLDLpzW7NpzAHaEK?rs=1&pid=ImgDetMain" alt="Left 4 Dead 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 3px;" />
+        </div>
+        <div class="news-content">
+          <h2>PUMPKIN PANIC</h2>
+          <p>Disfruta de la vida en tu pequeña granja</p>
+          <p>
+            Tienes mucho trabajo por hacer. Siembra, riega y cosecha. Esta acogedora y tranquila granja, situada en el corazón del bosque, tiene mucho que ofrecer.
+        </div>
+        <article class="novedades">
+          <div class="news-image">
+            <img src="https://i.ytimg.com/vi/93SPP00tcOM/maxresdefault.jpg" alt="Left 4 Dead 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 3px;" />
+          </div>
+          <div class="news-content">
+            <h2>gogh:focused with your avatar</h2>
+            <p>
+              Crea un espacio completamente tuyo, organizando muebles, decoraciones y colores a tu gusto. Añade imágenes o GIFs favoritos a monitores, pósters y otros objetos para darle un toque único a cada rincón. Guarda distintas configuraciones y cámbialas fácilmente para adaptarlas a tu estado de ánimo.
+          </div>
+        </article>
+      <!-- 4 Soporte -->
+      <article class="novedades">
+        <div class="news-image">
+          <img src="https://i.ytimg.com/vi/93SPP00tcOM/maxresdefault.jpg" alt="Left 4 Dead 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 3px;" />
+        </div>
+        <div class="news-content">
+          <h2>gogh:focused with your avatar</h2>
+          <p>
+            Crea un espacio completamente tuyo, organizando muebles, decoraciones y colores a tu gusto. Añade imágenes o GIFs favoritos a monitores, pósters y otros objetos para darle un toque único a cada rincón. Guarda distintas configuraciones y cámbialas fácilmente para adaptarlas a tu estado de ánimo.
+        </div>
+      </article>
+      <article class="soporte">
+        <div class="news-image">Imagen 10</div>
+        <div class="news-content">
+          <h2>Soporte 2</h2>
+          <p>
+            Resumen breve de la noticia de soporte 2. Puntos esenciales de la información noticiosa.
+          </p>
+        </div>
+      </article>
+      <article class="soporte">
+        <div class="news-image">Imagen 11</div>
+        <div class="news-content">
+          <h2>Soporte 3</h2>
+          <p>
+            Resumen breve de la noticia de soporte 3. Información de interés para el lector.
+          </p>
+        </div>
+      </article>
+      <article class="soporte">
+        <div class="news-image">Imagen 12</div>
+        <div class="news-content">
+          <h2>Soporte 4</h2>
+          <p>
+            Resumen breve de la noticia de soporte 4. Detalles y datos relevantes resumidos.
+          </p>
+        </div>
+      </article>
+      <!-- 3 Catálogo entries -->
+      <article class="catalog">
+        <div class="news-image">Imagen 13</div>
+        <div class="news-content">
+          <h2>Catálogo 1</h2>
+          <p>
+            Resumen breve del catálogo 1. Información presentada de manera clara y concisa.
+          </p>
+        </div>
+      </article>
+      <article class="catalog">
+        <div class="news-image">Imagen 14</div>
+        <div class="news-content">
+          <h2>Catálogo 2</h2>
+          <p>
+            Resumen breve del catálogo 2. Claves de la información para el lector.
+          </p>
+        </div>
+      </article>
+      <article class="catalog">
+        <div class="news-image">Imagen 15</div>
+        <div class="news-content">
+          <h2>Catálogo 3</h2>
+          <p>
+            Resumen breve del catálogo 3. Información precisa y de interés actual.
+          </p>
+        </div>
+      </article>
+    </div>
+    <footer>
+      <p>©noticias Ludex_informacion actualizada 2025</p>
+    </footer>
+    <script>
+      function filterArticles(category) {
+        const articles = document.querySelectorAll("article");
+        articles.forEach((article) => {
+          if (category === "all") {
+            article.style.display = "flex";
+          } else {
+            if (article.classList.contains(category)) {
+              article.style.display = "flex";
+            } else {
+              article.style.display = "none";
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

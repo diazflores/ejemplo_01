@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Página de Noticias - Estilo Steam</title>
+    <style>
+      /* Estilos generales */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-color: #171a21; /* Fondo muy oscuro */
+        color: #c7d5e0;
+      }
+      header,
+      footer {
+        background: #1b2838;
+        color: #fff;
+        padding: 8px 0; /* Barra más delgada */
+        text-align: center;
+      }
+      /* Navigation styled as buttons */
+      nav {
+        background: #2a475e;
+        padding: 10px;
+        text-align: center;
+      }
+      nav button {
+        background: #2a475e;
+        border: none;
+        color: #c7d5e0;
+        margin: 0 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s, color 0.3s;
+      }
+      nav button:hover {
+        background: #66c0f4;
+        color: #fff;
+      }
+      .container {
+        width: 80%;
+        margin: 20px auto;
+        overflow: hidden;
+        padding: 20px;
+        background: #1b2838;
+        border-radius: 5px;
+      }
+      /* Cada noticia en un cuadro */
+      article {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #2a475e;
+        padding-bottom: 10px;
+      }
+      /* Cuadro para la imagen */
+      .news-image {
+        flex: 0 0 240px; /* Ancho fijo mayor */
+        height: 180px; /* Altura mayor */
+        margin: 0 20px; /* Márgenes izquierdo y derecho */
+        background: #2a475e;
+        border: 2px solid #66c0f4;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #66c0f4;
+        font-size: 14px;
+      }
+      /* Sección de contenido de la noticia */
+      .news-content {
+        flex: 1;
+      }
+      .news-content h2 {
+        margin-top: 0;
+        color: #66c0f4;
+      }
+      .news-content p {
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Comunidad</h1>
+    </header>
+    <nav>
+      <button type="button" onclick="filterArticles('all')">Inicio</button>
+      <button type="button" onclick="filterArticles('review')">Reseñas</button>
+      <button type="button" onclick="filterArticles('novedades')">Novedades</button>
+      <button type="button" onclick="filterArticles('soporte')">Soporte</button>
+      <button type="button" onclick="filterArticles('catalog')">Catálogo</button>
+      <button type="button" onclick="filterArticles('foro')">Foro</button> <!-- Nuevo botón -->
+    </nav>
+    <div class="container">
+      <!-- 4 Reviews -->
+      <article class="review">
+        <div class="news-image">Imagen 1</div>
+        <div class="news-content">
+          <h2>Reseña 1</h2>
+          <p>
+            Resumen breve de la reseña 1. Aquí se exponen los detalles más importantes.
+          </p>
+        </div>
+      </article>
+      <article class="review">
+        <div class="news-image">Imagen 2</div>
+        <div class="news-content">
+          <h2>Reseña 2</h2>
+          <p>
+            Resumen breve de la reseña 2. Información destacada y relevante.
+          </p>
+        </div>
+      </article>
+      <article class="review">
+        <div class="news-image">Imagen 3</div>
+        <div class="news-content">
+          <h2>Reseña 3</h2>
+          <p>
+            Resumen breve de la reseña 3. Información e impacto en la audiencia.
+          </p>
+        </div>
+      </article>
+      <article class="review">
+        <div class="news-image">Imagen 4</div>
+        <div class="news-content">
+          <h2>Reseña 4</h2>
+          <p>
+            Resumen breve de la reseña 4. Descripción concisa y clara.
+          </p>
+        </div>
+      </article>
+      <!-- 4 Novedades -->
+      <article class="novedades">
+        <div class="news-image">Imagen 5</div>
+        <div class="news-content">
+          <h2>Novedades 1</h2>
+          <p>
+            Resumen breve de la noticia de novedades 1. Detalles esenciales expuestos de forma atractiva.
+          </p>
+        </div>
+      </article>
+      <article class="novedades">
+        <div class="news-image">Imagen 6</div>
+        <div class="news-content">
+          <h2>Novedades 2</h2>
+          <p>
+            Resumen breve de la noticia de novedades 2. Información resumida para captar el interés.
+          </p>
+        </div>
+      </article>
+      <article class="novedades">
+        <div class="news-image">Imagen 7</div>
+        <div class="news-content">
+          <h2>Novedades 3</h2>
+          <p>
+            Resumen breve de la noticia de novedades 3. Texto explicativo y al punto.
+          </p>
+        </div>
+      </article>
+      <article class="novedades">
+        <div class="news-image">Imagen 8</div>
+        <div class="news-content">
+          <h2>Novedades 4</h2>
+          <p>
+            Resumen breve de la noticia de novedades 4. Datos clave presentados en forma concisa.
+          </p>
+        </div>
+      </article>
+      <!-- 4 Soporte -->
+      <article class="soporte">
+        <div class="news-image">Imagen 9</div>
+        <div class="news-content">
+          <h2>Soporte 1</h2>
+          <p>
+            Resumen breve de la noticia de soporte 1. Información estructurada y clara.
+          </p>
+        </div>
+      </article>
+      <article class="soporte">
+        <div class="news-image">Imagen 10</div>
+        <div class="news-content">
+          <h2>Soporte 2</h2>
+          <p>
+            Resumen breve de la noticia de soporte 2. Puntos esenciales de la información noticiosa.
+          </p>
+        </div>
+      </article>
+      <article class="soporte">
+        <div class="news-image">Imagen 11</div>
+        <div class="news-content">
+          <h2>Soporte 3</h2>
+          <p>
+            Resumen breve de la noticia de soporte 3. Información de interés para el lector.
+          </p>
+        </div>
+      </article>
+      <article class="soporte">
+        <div class="news-image">Imagen 12</div>
+        <div class="news-content">
+          <h2>Soporte 4</h2>
+          <p>
+            Resumen breve de la noticia de soporte 4. Detalles y datos relevantes resumidos.
+          </p>
+        </div>
+      </article>
+      <!-- 3 Catálogo entries -->
+      <article class="catalog">
+        <div class="news-image">Imagen 13</div>
+        <div class="news-content">
+          <h2>Catálogo 1</h2>
+          <p>
+            Resumen breve del catálogo 1. Información presentada de manera clara y concisa.
+          </p>
+        </div>
+      </article>
+      <article class="catalog">
+        <div class="news-image">Imagen 14</div>
+        <div class="news-content">
+          <h2>Catálogo 2</h2>
+          <p>
+            Resumen breve del catálogo 2. Claves de la información para el lector.
+          </p>
+        </div>
+      </article>
+      <article class="catalog">
+        <div class="news-image">Imagen 15</div>
+        <div class="news-content">
+          <h2>Catálogo 3</h2>
+          <p>
+            Resumen breve del catálogo 3. Información precisa y de interés actual.
+          </p>
+        </div>
+      </article>
+    </div>
+    <footer>
+      <p>©noticias Ludex_informacion actualizada 2025</p>
+    </footer>
+    <script>
+      function filterArticles(category) {
+        const articles = document.querySelectorAll("article");
+        articles.forEach((article) => {
+          if (category === "all") {
+            article.style.display = "flex";
+          } else {
+            if (article.classList.contains(category)) {
+              article.style.display = "flex";
+            } else {
+              article.style.display = "none";
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
