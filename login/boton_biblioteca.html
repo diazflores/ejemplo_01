@@ -121,13 +121,29 @@
     .play-btn:hover {
       background-color: #45a049;
     }
+    .inicio-btn {
+  background-color: #4CAF50; /* Color verde */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: background-color 0.2s; /* Transición suave */
+}
+
+.inicio-btn:hover {
+  background-color: #45a049; /* Color más oscuro al pasar el mouse */
+}
   </style>
 </head>
 <body>
   <header>
     <h1>Biblioteca de Videojuegos</h1>
-    <!-- Search input positioned to the right in the header -->
-    <input type="text" class="search-input" id="searchInput" placeholder="Buscar juegos...">
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <input type="text" class="search-input" id="searchInput" placeholder="Buscar juegos...">
+      <button class="inicio-btn" onclick="window.location.href='pagina_venta.html'">Inicio</button>
+    </div>
   </header>
   <div class="container">
     <!-- "Tus juegos" header box -->
@@ -136,30 +152,30 @@
       <!-- Example Game 1 -->
       <article class="game-item">
         <div class="image-box">
-          <img src="ruta-imagen-juego1.jpg" alt="Imagen de Juego 1">
+          <img src="https://www.gaming.net/wp-content/uploads/2023/03/Counter-Strike-2-1.jpg" alt="Imagen de Juego 3">
         </div>
         <div class="game-content">
-          <h2 class="game-title">Juego 1</h2>
+          <h2 class="game-title">left 4 dead 2</h2>
           <button class="play-btn">Jugar</button>
         </div>
       </article>
       <!-- Example Game 2 -->
       <article class="game-item">
         <div class="image-box">
-          <img src="ruta-imagen-juego2.jpg" alt="Imagen de Juego 2">
+          <img src="https://cdn.wallpapersafari.com/80/89/LYb86q.jpg" alt="Imagen de Juego 3">
         </div>
         <div class="game-content">
-          <h2 class="game-title">Juego 2</h2>
+          <h2 class="game-title">Counter strike</h2>
           <button class="play-btn">Jugar</button>
         </div>
       </article>
       <!-- Example Game 3 -->
       <article class="game-item">
         <div class="image-box">
-          <img src="ruta-imagen-juego3.jpg" alt="Imagen de Juego 3">
+          <img src="https://elcandelerotecnologico.com/wp-content/uploads/2024/03/juegos_albion-online.png" alt="Imagen de Juego 3">
         </div>
         <div class="game-content">
-          <h2 class="game-title">Juego 3</h2>
+          <h2 class="game-title">albion online</h2>
           <button class="play-btn">Jugar</button>
         </div>
       </article>

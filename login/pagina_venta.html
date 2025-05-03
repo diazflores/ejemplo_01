@@ -79,7 +79,6 @@
       .nav-buttons button:hover {
         background-color: #1a293a;
       }
-      /* Shopping cart button styles */
       .shopping-cart-btn {
         display: inline-flex;
         align-items: center;
@@ -95,7 +94,7 @@
       .shopping-cart-btn:hover {
         background-color: #11481d;
       }
-      /* Game card slider styles with an added border */
+     
       .game-slider {
         position: relative;
         height: 10rem;
@@ -118,17 +117,17 @@
       .game-slider img.active {
         opacity: 1;
       }
-      /* Hover effect for game cards */
+      
       .game-item:hover {
         transform: scale(1.05);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
       }
-      /* Bottom slider styles */
+      
       .bottom-slider {
   position: relative;
   width: 100%;
   max-width: 1300px;
-  height: 570px; /* Altura actual */
+  height: 570px;
   margin: 20px auto;
   overflow: hidden;
   border: 2px solid #ddd;
@@ -139,7 +138,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* Altura de las imágenes */
+  height: 100%; 
   object-fit: cover;
   opacity: 0;
   transition: opacity 1s ease-in-out;
@@ -147,7 +146,7 @@
 .bottom-slider img.active {
   opacity: 1;
 }
-      /* New bottom slider controls container */
+      
       .bottom-slider-controls {
         position: absolute;
         bottom: 10px;
@@ -158,7 +157,7 @@
         align-items: center;
         z-index: 2;
       }
-      /* "Juegos proximos" button */
+      
       .juegos-nuevos-btn {
         background-color: #1b5b7f;
         color: white;
@@ -245,13 +244,27 @@
       .hover\:bg-steam-hover:hover {
         background-color: #14181c; /* Slightly lighter on hover */
       }
+      footer {
+  background-color: #1b2838; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  text-align: center; /* Centrar el texto */
+  padding: 10px 0; /* Espaciado vertical */
+  margin-top: 20px; /* Separación del contenido anterior */
+  font-size: 14px; /* Tamaño de fuente */
+}
+.logo {
+    width: 50px; /* Ancho del logo */
+    height: 50px; /* Altura del logo */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsión */
+    margin-left: 10px; /* Espaciado entre el texto y el logo */
+}
     </style>
   </head>
   <body>
     <header class="bg-gray-900 p-4 header">
       <h1 class="text-2xl font-bold text-blue-400 flex items-center">
         Ludex
-        <img src="" alt="Logo" />
+       <img src="logo.png.png" alt="Logo" class="logo" />
       </h1>
       <nav class="flex items-center space-x-4 nav-buttons">
         <input
@@ -261,10 +274,9 @@
           placeholder="Buscar juego..."
         />
         <!-- Navigation buttons -->
-        <button onclick="window.location.href='pagina_venta.html'">Inicio</button>
         <button onclick="window.location.href='boton_noticias.html'">Noticias</button>
         <button onclick="window.location.href='boton_biblioteca.html'">Biblioteca</button>
-        <button onclick="window.location.href='comunidad.html'">Comunidad</button>
+        <button onclick="window.location.href='boton_comunidad.html'">Comunidad</button>
         <!-- Shopping cart button -->
         <button class="shopping-cart-btn" onclick="window.location.href='boton_carrito.html'">
           🛒 Carrito (0)
@@ -286,7 +298,7 @@
           <!-- Game Card 1 -->
           <div class="bg-steam text-white p-4 rounded shadow game-item">
             <div class="game-slider">
-              <img src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_auto/ncom/es_LA/games/switch/m/minecraft-switch/hero" alt="Game 1 Image 1" class="active" />
+              <img src="https://1.bp.blogspot.com/-Xd0NzegXTyE/WcBaqtOANEI/AAAAAAAAAQw/eJ8RVaEJ8escz4f42UvpsUrK4zhjZn1WgCLcBGAs/s1600/H2x1_NSwitch_MinecraftNintendoSwitchEdition.jpg" alt="Game 1 Image 1" class="active" />
               <img src="https://2.bp.blogspot.com/-_XFAENyAAbY/W0y45GlY0lI/AAAAAAAAAIM/wjgbW2i87BUhy_a1deZOwRc1BvaI1lFxwCLcBGAs/s1600/minecraft-ps4-image.jpg" alt="Game 1 Image 2" />
               <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/10/minecraft-is-losing-one-of-its-features-in-2025.jpg" alt="Game 1 Image 3" />
             </div>
@@ -296,7 +308,7 @@
               <button class="bg-steam hover:bg-steam-hover text-white py-1 px-2 rounded">
                 Comprar
               </button>
-              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='detail1.html'">
+              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='juego_01.html'">
                 Ver
               </button>
             </div>
@@ -314,7 +326,7 @@
               <button class="bg-steam hover:bg-steam-hover text-white py-1 px-2 rounded">
                 Comprar
               </button>
-              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='detail2.html'">
+              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='juego_02.html'">
                 Ver
               </button>
             </div>
@@ -332,7 +344,7 @@
               <button class="bg-steam hover:bg-steam-hover text-white py-1 px-2 rounded">
                 Comprar
               </button>
-              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='detail3.html'">
+              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='juego_03.html'">
                 Ver
               </button>
             </div>
@@ -350,7 +362,7 @@
               <button class="bg-steam hover:bg-steam-hover text-white py-1 px-2 rounded">
                 Comprar
               </button>
-              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='detail4.html'">
+              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='juego_04.html'">
                 Ver
               </button>
             </div>
@@ -375,7 +387,7 @@
               <button class="bg-steam hover:bg-steam-hover text-white py-1 px-2 rounded">
                 Comprar
               </button>
-              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='detail5.html'">
+              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='juego_05.html'">
                 Ver
               </button>
             </div>
@@ -393,7 +405,7 @@
               <button class="bg-steam hover:bg-steam-hover text-white py-1 px-2 rounded">
                 Comprar
               </button>
-              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='detail6.html'">
+              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='juego_06.html'">
                 Ver
               </button>
             </div>
@@ -401,9 +413,9 @@
           <!-- Game Card 7 -->
           <div class="bg-steam text-white p-4 rounded shadow game-item">
             <div class="game-slider">
-              <img src="https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_SkyChildrenOfTheLight_ES_image1600w.jpg" alt="Game 7 Image 1" class="active" />
-              <img src="https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/ncom/software/switch/70010000028614/3128d38139c953e5f6cc7d511cfb0f0f682c2ad5fdaa48d3c6d81d4ae71016c6" alt="Game 7 Image 2" />
-              <img src="https://www.nintenderos.com/wp-content/uploads/2022/03/Sky-Animation_03-27-22-768x432-1.jpg" alt="Game 7 Image 3" />
+              <img src="https://nuies.com/sky/wp-content/uploads/sites/2/2020/04/daily-quest-accomplished-sanctuary-guide-02-forest.jpg" alt="Game 7 Image 1" class="active" />
+              <img src="https://th.bing.com/th/id/OIP.zgYg43uOTT5J3bIYv2ewXQHaEK?rs=1&pid=ImgDetMain" alt="Game 7 Image 2" />
+              <img src="https://th.bing.com/th/id/R.067d59a0ff9cfa3b572f11e7e49d0514?rik=q5HyxbrXjK4Y%2bw&pid=ImgRaw&r=0" alt="Game 7 Image 3" />
             </div>
             <h2 class="text-xl font-bold mb-2">Sky: Niños de la Luz</h2>
             <p class="mb-2">$00.00</p>
@@ -411,7 +423,7 @@
               <button class="bg-steam hover:bg-steam-hover text-white py-1 px-2 rounded">
                 Comprar
               </button>
-              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='detail7.html'">
+              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='juego_07.html'">
                 Ver
               </button>
             </div>
@@ -420,7 +432,7 @@
           <div class="bg-steam text-white p-4 rounded shadow game-item">
             <div class="game-slider">
               <img src="https://elcandelerotecnologico.com/wp-content/uploads/2024/03/juegos_albion-online.png" alt="Game 8 Image 1" class="active" />
-              <img src="https://pbs.twimg.com/media/ESQsfkGXcAEimm9.jpg:large" alt="Game 8 Image 2" />
+              <img src="https://th.bing.com/th/id/R.33fefd0d7bdb22193ea7bcba1ed80d4b?rik=G6T4bnfc%2fihFLA&pid=ImgRaw&r=0" alt="Game 8 Image 2" />
               <img src="https://play-lh.googleusercontent.com/vbijPpoidHJk0JbhJw_niAD-sXqsKgmCevEpNcvQccPQta4rMwQN2axTxhDTKItPGoZX=w526-h296" alt="Game 8 Image 3" />
             </div>
             <h2 class="text-xl font-bold mb-2">Albion Online</h2>
@@ -429,7 +441,7 @@
               <button class="bg-steam hover:bg-steam-hover text-white py-1 px-2 rounded">
                 Comprar
               </button>
-              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='detail8.html'">
+              <button class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded" onclick="window.location.href='juego_08.html'">
                 Ver
               </button>
             </div>
@@ -473,17 +485,18 @@
           <button class="next-button">&#9654;</button>
         </div>
       </div>
-      <img src="https://image.api.playstation.com/vulcan/ap/rnd/202409/1002/db76ab694be57a4440a7a783bc8ac9a1eb169ad0188abf5a.jpg" alt="Slide 1" class="active" />
+      <img src="https://www.solofondos.com/wp-content/uploads/2015/12/A87-2048x1152.jpg" alt="Slide 1" class="active" />
       <img src="https://th.bing.com/th/id/R.c029dd6dfceb9c176acfa2e933e88877?rik=aCIwMA5fimxM2w&riu=http%3a%2f%2fimg.youtube.com%2fvi%2fAiXTn4mOXsI%2fmaxresdefault.jpg&ehk=uULMLQ4pc0UJsA%2bGAY85gdee%2bOu4Ij7wD6xO%2f3mFbEQ%3d&risl=&pid=ImgRaw&r=0" alt="Slide 2" />
-      <img src="https://static.deltiasgaming.com/2025/01/Dynasty-Warriors-Origins.jpg" alt="Slide 3" />
+      <img src="https://www.solofondos.com/wp-content/uploads/2015/12/75d2fa265e45b7af83334913e2a05ce3.jpg" alt="Slide 3" />
       <img src="https://wallpapercave.com/wp/wp4610116.jpg" alt="Slide 4" />
-      <img src="https://linuxgameconsortium.com/wp-content/uploads/2021/06/ender-lilies-quietus-of-the-knights-quiet-release-on-linux-with-windows-pc.jpg" alt="Slide 5" />
+      <img src="https://www.solofondos.com/wp-content/uploads/2015/12/fondos-de-pantalla-hd-juegos-pc.jpg" alt="Slide 5" />
       <img src="https://lede-admin.usa.streetsblog.org/wp-content/uploads/sites/46/2022/11/STREETSBLOG1440.jpg" alt="Slide 6" />
       <img src="https://cdn.wccftech.com/wp-content/uploads/2024/07/avowed-overlook-HD-scaled.jpg" alt="Slide 7" />
       <img src="https://th.bing.com/th/id/R.f0cab2bcc4cb80342703e17e6b8b3740?rik=URo%2fGyI5v1xeZQ&pid=ImgRaw&r=0" alt="Slide 8" />
-      <img src="https://image.api.playstation.com/vulcan/ap/rnd/202104/0613/h4kkgT3SvFijtUAhX7nvX4SQ.jpg" alt="Slide 9" />
+      <img src="https://th.bing.com/th/id/OIP.bTHSSmoVNYc4L-Isj_sy1wHaEK?w=1280&h=720&rs=1&pid=ImgDetMain" alt="Slide 9" />
       <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2023/09/ea-sports-wrc-3127002.jpg?tf=3840x" alt="Slide 10" />
     </div>
+    
     <script>
       // First search functionality (using the "input" event) that toggles the display of section buttons and bottom slider
       document.addEventListener("DOMContentLoaded", function () {
@@ -603,5 +616,12 @@
         }, 4000);
       });
     </script>
+    <footer>
+      <table style="width: 100%; text-align: center; background-color: #171d25; color: white; padding: 40px 0; margin-top: 20px; font-size: 20px; height: 100px;">
+        <tr>
+          <td>© Ludex_juegos actualizada 2025</td>
+        </tr>
+      </table>
+    </footer>
   </body>
 </html>
